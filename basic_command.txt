@@ -1,0 +1,467 @@
+1. pwd - To know the path of current directory
+
+Output:- /home/beryl/linux
+
+
+
+
+
+
+2. mkdir - To create a new directory
+
+Output- mkdir linux
+
+mkdir -p tut1/tut2/tut3 to create directory inside inside directory
+
+mkdir -m a= rwx linux give all permission to the directory.
+	
+	
+	
+	
+	
+	
+
+3. ls - to see the all file present in the directory you are in.
+   ls -a - Is used to show all file with hidden file.
+   ls * - command to list the contents of the directory with it's subdirectories:
+   ls -d */ - to list only directory
+   ls .. - list the file and directory of previous folder
+   ls / - list the content of root dir
+   ls ~ - list the  content of home dir
+   ls -R - 'ls -R' command to list all files and directories with their corresponding subdirectories down to the last file 
+   ls -lu - Show access time of file and directory
+   ls -l show modify time o file  
+ 
+Output:-
+
+beryl@beryl-ThinkPad-L412:~$ ls
+ Desktop    Downloads    linux  Pictures  slack-desktop-4.0.2-amd64.deb  Templates
+ Documents  google-chrome-stable_current_amd64.deb  Music  Public    snap   Videos
+
+beryl@beryl-ThinkPad-L412:~$ ls -a
+.             .cache     Downloads                               .local    .pki                           snap                       Videos
+..            .config    .gnupg                                  .mozilla  .profile                       .ssh
+.bash_logout  Desktop    google-chrome-stable_current_amd64.deb  Music     Public                         .sudo_as_admin_successful
+.bashrc       Documents  linux 
+Pictures  slack-desktop-4.0.2-amd64.deb  Templates
+
+
+beryl@beryl-ThinkPad-L412:~/linux$ ls /home/beryl/Documents
+demo.txt  newer.txt  new.txt
+
+
+ls -s - List file/dir with thier size
+total 142300
+    4 Desktop    82396 google-chrome-stable_current_amd64.deb      4 Pictures                           4 snap
+    4 Documents      4 linux                                       4 Public                             4 Templates
+    4 Downloads      4 Music                                   59864 slack-desktop-4.0.2-amd64.deb      4 Videos
+
+ls -l - list the contents of the directory in a table format with columns
+total 142300
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Desktop
+drwxr-xr-x 2 beryl beryl     4096 May  2 13:03 Documents
+drwxr-xr-x 2 beryl beryl     4096 May  2 11:14 Downloads
+-rw-rw-r-- 1 beryl beryl 84369852 Apr 20 07:40 google-chrome-stable_current_amd64.deb
+drwxrwxr-x 4 beryl beryl     4096 May  2 13:31 linux
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Music
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Pictures
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Public
+-rw-rw-r-- 1 beryl beryl 61298592 Aug 22  2019 slack-desktop-4.0.2-amd64.deb
+drwx------ 4 beryl beryl     4096 May  2 11:14 snap
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Templates
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Videos
+
+ls -lh - To list the files or directories in the same table format above, but with another column representing the size of each file/directory in readable format:
+
+total 139M
+drwxr-xr-x 2 beryl beryl 4.0K Apr 28 12:01 Desktop
+drwxr-xr-x 2 beryl beryl 4.0K May  2 13:03 Documents
+drwxr-xr-x 2 beryl beryl 4.0K May  2 11:14 Downloads
+-rw-rw-r-- 1 beryl beryl  81M Apr 20 07:40 google-chrome-stable_current_amd64.deb
+drwxrwxr-x 4 beryl beryl 4.0K May  2 13:31 linux
+drwxr-xr-x 2 beryl beryl 4.0K Apr 28 12:01 Music
+drwxr-xr-x 2 beryl beryl 4.0K Apr 28 12:01 Pictures
+drwxr-xr-x 2 beryl beryl 4.0K Apr 28 12:01 Public
+-rw-rw-r-- 1 beryl beryl  59M Aug 22  2019 slack-desktop-4.0.2-amd64.deb
+drwx------ 4 beryl beryl 4.0K May  2 11:14 snap
+drwxr-xr-x 2 beryl beryl 4.0K Apr 28 12:01 Templates
+drwxr-xr-x 2 beryl beryl 4.0K Apr 28 12:01 Videos
+
+ls -lha - show list in longer format with size in human readable format include all the hidden file.
+
+beryl@beryl-ThinkPad-L412:~$ ls -lha
+total 140M
+drwxr-xr-x 19 beryl beryl 4.0K May  2 11:56 .
+drwxr-xr-x  3 root  root  4.0K Apr 28 11:48 ..
+-rw-r--r--  1 beryl beryl  220 Apr 28 11:48 .bash_logout
+-rw-r--r--  1 beryl beryl 3.7K Apr 28 11:48 .bashrc
+drwxr-xr-x 14 beryl beryl 4.0K May  2 10:51 .cache
+drwx------ 15 beryl beryl 4.0K May  2 13:09 .config
+drwxr-xr-x  2 beryl beryl 4.0K Apr 28 12:01 Desktop
+drwxr-xr-x  2 beryl beryl 4.0K May  2 13:03 Documents
+drwxr-xr-x  2 beryl beryl 4.0K May  2 11:14 Downloads
+drwx------  3 beryl beryl 4.0K May  2 10:45 .gnupg
+-rw-rw-r--  1 beryl beryl  81M Apr 20 07:40 google-chrome-stable_current_amd64.deb
+drwxrwxr-x  4 beryl beryl 4.0K May  2 13:31 linux
+drwxr-xr-x  3 beryl beryl 4.0K Apr 28 12:01 .local
+drwx------  5 beryl beryl 4.0K May  2 10:35 .mozilla
+drwxr-xr-x  2 beryl beryl 4.0K Apr 28 12:01 Music
+drwxr-xr-x  2 beryl beryl 4.0K Apr 28 12:01 Pictures
+drwx------  3 beryl beryl 4.0K May  2 10:51 .pki
+-rw-r--r--  1 beryl beryl  807 Apr 28 11:48 .profile
+drwxr-xr-x  2 beryl beryl 4.0K Apr 28 12:01 Public
+-rw-rw-r--  1 beryl beryl  59M Aug 22  2019 slack-desktop-4.0.2-amd64.deb
+drwx------  4 beryl beryl 4.0K May  2 11:14 snap
+drwx------  2 beryl beryl 4.0K May  2 10:45 .ssh
+-rw-r--r--  1 beryl beryl    0 May  2 10:48 .sudo_as_admin_successful
+drwxr-xr-x  2 beryl beryl 4.0K Apr 28 12:01 Templates
+drwxr-xr-x  2 beryl beryl 4.0K Apr 28 12:01 Videos
+
+
+beryl@beryl-ThinkPad-L412:~$ ls -tl list sorted by last modified time
+total 142300
+drwxrwxr-x 4 beryl beryl     4096 May  2 13:31 linux
+drwxr-xr-x 2 beryl beryl     4096 May  2 13:03 Documents
+drwxr-xr-x 2 beryl beryl     4096 May  2 11:14 Downloads
+drwx------ 4 beryl beryl     4096 May  2 11:14 snap
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Desktop
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Music
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Pictures
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Public
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Templates
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Videos
+-rw-rw-r-- 1 beryl beryl 84369852 Apr 20 07:40 google-chrome-stable_current_amd64.deb
+-rw-rw-r-- 1 beryl beryl 61298592 Aug 22  2019 slack-desktop-4.0.2-amd64.deb
+
+
+beryl@beryl-ThinkPad-L412:~$ ls -tlr list sorted by time in first modified file or directory.
+total 142300
+-rw-rw-r-- 1 beryl beryl 61298592 Aug 22  2019 slack-desktop-4.0.2-amd64.deb
+-rw-rw-r-- 1 beryl beryl 84369852 Apr 20 07:40 google-chrome-stable_current_amd64.deb
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Videos
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Templates
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Public
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Pictures
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Music
+drwxr-xr-x 2 beryl beryl     4096 Apr 28 12:01 Desktop
+drwx------ 4 beryl beryl     4096 May  2 11:14 snap
+drwxr-xr-x 2 beryl beryl     4096 May  2 11:14 Downloads
+drwxr-xr-x 2 beryl beryl     4096 May  2 13:03 Documents
+drwxrwxr-x 4 beryl beryl     4096 May  2 13:31 linux
+ 
+ 
+ beryl@beryl-ThinkPad-L412:~$ ls -S List all the file and directory sorted by their size in descending order
+google-chrome-stable_current_amd64.deb  Desktop    Downloads  Music     Public  Templates
+slack-desktop-4.0.2-amd64.deb           Documents  linux      Pictures  snap    Videos
+
+beryl@beryl-ThinkPad-L412:~$ ls -Sr List all the file and directory sorted by their size in Ascending order
+Videos     snap    Pictures  linux      Documents  slack-desktop-4.0.2-amd64.deb
+Templates  Public  Music     Downloads  Desktop    google-chrome-stable_current_amd64.deb
+
+
+
+
+
+
+
+
+
+4. cd - 'cd' cmd is used to change directory or go to a directory.
+	only cd command is used to back to the home directory
+	And, cd .. is used to back to the folder before that folder
+
+Output-
+
+ beryl@beryl-ThinkPad-L412:~$ cd linux/
+ cd Downloads
+ cd linux/hello
+ 
+ cd - :- 'cd -' is move to the previous directory
+ 
+ 
+ 
+ 
+ 
+
+5. rmdir - 'rmdir' is used to remove a empty directory
+
+beryl@beryl-ThinkPad-L412:~/linux$ mkdir DIR
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt  DIR  hello
+beryl@beryl-ThinkPad-L412:~/linux$ rmdir DIR
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt  hello
+
+
+rmdir -p tut1/tut2/tut3 this command first remove the tut3 dir then tut2 and so on 
+
+
+
+
+
+
+
+6. rm - rm commond is used to remove files and directories both. 
+	
+
+To remove file 
+Output - 
+
+beryl@beryl-ThinkPad-L412:~/linux/hello$ ls
+new.txt  this.txt
+beryl@beryl-ThinkPad-L412:~/linux/hello$ rm new.txt (remove file)
+beryl@beryl-ThinkPad-L412:~/linux/hello$ ls
+this.txt
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ ls
+demo1.png  demo.txt  this.png
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ rm *.png (to remove all file with .png extention)
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ ls
+demo.txt
+
+
+rm -i filename - The -i option tells rm to prompt the user for each given file before removing it
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ rm -i *.tar
+rm: remove regular empty file 'demo121.tar'? n
+rm: remove regular empty file 'demo12.tar'? n
+rm: remove regular empty file 'demo1.tar'? y
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ ls
+demo121.tar  demo12.tar
+
+TO remove dir containing file
+Output - 
+
+beryl@beryl-ThinkPad-L412:~/linux$ rm -r hello
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt
+
+rm -d - to remove only empty directory
+
+rm -I - ' -I ' is used to give prompt once to user when more than three file removed
+
+output-
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ rm -I file1.txt file2.txt file3.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ rm -I file4.txt file5.txt file6.txt file7.txt file8.txt
+rm: remove 5 arguments? n
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ rm -I file4.txt file5.txt file6.txt file7.txt file8.txt
+rm: remove 5 arguments? y
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ ls
+demo1.tar  demo2.tar  demo3.tar  file  file.txt
+
+
+
+
+
+
+7. touch - is used to create a empty file
+
+output - 
+
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt
+beryl@beryl-ThinkPad-L412:~/linux$ touch new.txt
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt  new.txt
+
+
+touch -m filename - change the Modify time  file
+touch -a filename  - change access time of file
+
+
+
+
+
+
+8. cp - 'cp' is used to copy the file btw directory through command line. It takes two arguments: The first is the location of the file b
+e copied, the second is where to copy.
+
+beryl@beryl-ThinkPad-L412:~/linux$ cp new.txt /home/beryl/Documents
+beryl@beryl-ThinkPad-L412:~/linux$ cd ~/Documents
+beryl@beryl-ThinkPad-L412:~/Documents$ ls
+new.txt
+
+
+A. copy same working directory - copy content of first file into second file
+
+Output-
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ cp file{3,4}.txt or cp file3.txt file4.txt 
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ cat file4.txt
+this is geneune 
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ cat file3.txt
+this is geneune 
+
+B. copy file to another directory and with different name -n is used not to overwrite the data when same file exists.
+
+Output- 
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ cp -n file1.txt ../second_dir/copyfile1.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ cd ../second_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ ls
+copyfile1.txt  file3.txt  file4.txt
+
+C. To copy a directory, including all its files and subdirectories, use the -R or -r option.
+
+Output-
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ cp -R first_dir second_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ cd second_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ ls
+copyfile1.txt  file3.txt  file4.txt  first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ cd first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir/first_dir$ ls
+copyfile.txt  file1.txt  file2.txt  file3.txt
+
+
+D. To copy only the files and subdirectories but not the source directory, use the -T option:
+
+Output-
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ cp -RT second_dir first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ cd first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ ls
+copyfile1.txt  copyfile.txt  file1.txt  file2.txt  file3.txt  file4.txt  first_dir
+
+
+E. Copy multiple file and directory for multiple copy of file and dir destination should always be a dir.
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ cp -R file3.txt file4.txt first_dir /home/beryl/linux/demo1
+beryl@beryl-ThinkPad-L412:~$ cd /home/beryl/linux/demo1
+beryl@beryl-ThinkPad-L412:~/linux/demo1$ ls
+file3.txt  file4.txt  file.txt  first_dir  new  new.txt  second_dir
+
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ cp file3.txt ../first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/second_dir$ ls
+file3.txt  file4.txt
+
+
+
+
+
+
+9. mv - 'mv' is used to move a file through command line and also to rename a file
+
+	
+Output - 
+
+beryl@beryl-ThinkPad-L412:~/linux$ mv new.txt newer.txt (rename a file )
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt  newer.txt
+beryl@beryl-ThinkPad-L412:~/linux$ mv newer.txt /home/beryl/Documents (move a file )
+beryl@beryl-ThinkPad-L412:~/linux$ ls
+basic_command.txt
+beryl@beryl-ThinkPad-L412:~/linux$ cd ~/Documents
+beryl@beryl-ThinkPad-L412:~/Documents$ ls
+newer.txt  new.txt
+
+A. if the first_dir directory exists, the command will move file/dir inside first_dir. If first_dir doesn’t exist, dir/file will be renamed to first_dir
+ 
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ mv copyfile1.txt first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ ls
+file1.txt  file2.txt  file3.txt  file4.txt  first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ cd first_dir
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ ls
+copyfile1.txt  copyfile.txt  file1.txt  file2.txt  file3.txt
+
+
+10. locate — The locate command is used to locate a file in a Linux system
+ 
+beryl@beryl-ThinkPad-L412:~/Documents$ locate ew.txt
+/home/beryl/Documents/new.txt
+beryl@beryl-ThinkPad-L412:~/Documents$ locate *ew*txt
+/home/beryl/Documents/new.txt
+/home/beryl/Documents/newer.txt
+
+
+11. echo -  The "echo" command helps us move some data, usually text into a file. 
+
+output 
+
+beryl@beryl-ThinkPad-L412:~/Documents$ echo data insert using echo command >> newer.txt
+beryl@beryl-ThinkPad-L412:~/Documents$ cat newer.txt
+jjisdfm
+
+
+
+12. cat - Use the cat command to display the contents of a file.
+
+output - 
+beryl@beryl-ThinkPad-L412:~/Documents$ cat newer.txt
+jjisdfm
+
+
+13. chmod - TO change the permission of file by ugo=rwx where u = user, g = Group, o = Other and r = read, w = write, x = execution
+	
+output- 
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ ls -l file1.txt
+-rw-rw-r-- 1 beryl beryl 17 May  2 17:19 file1.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ chmod u=x,g=x,o=wx file1.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ ls -l file1.txt
+---x--x-wx 1 beryl beryl 17 May  2 17:19 file1.txt
+
+
+ we can also change the permission of file in numeric form it easy  and short to write where read denote by 4, write permission denote by 2 and 1 denote execution and 0 for no permission
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ chmod 415 file1.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ ls -l file1.txt
+-r----xr-x 1 beryl beryl 17 May  2 17:19 file1.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ chmod 756 file1.txt
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ ls -l file1.txt
+-rwxr-xrw- 1 beryl beryl 17 May  2 17:19 file1.txt
+
+ 
+
+14. Grep - Grep command is used to find the particular text from file 
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir/first_dir$ grep is file1.txt
+this is geneune 
+
+a. to find a whole word in all file 
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ grep -w is *
+file2.txt:this is geneune 
+file3.txt:this is geneune 
+file4.txt:this is geneune 
+grep: first_dir: Is a directory
+
+b. to find a whole word in all file and ignore case
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ grep -wi Is *
+file2.txt:this is geneune 
+file3.txt:this is geneune 
+file4.txt:this is geneune 
+grep: first_dir: Is a directory
+
+
+c. To search in subdirectory 
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ grep -wir Is *
+file2.txt:this is geneune 
+file3.txt:this is geneune 
+file4.txt:this is geneune 
+first_dir/copyfile.txt:this is geneune 
+first_dir/file1.txt:this is geneune 
+first_dir/file2.txt:this is geneune 
+first_dir/temp:this is geneune 
+first_dir/file3.txt:this is geneune 
+
+d. To count the number of matches - grep can display filename and the number of line where pattern matches
+
+beryl@beryl-ThinkPad-L412:~/linux/demo1/first_dir$ grep -c "is" *
+file2.txt:3
+file3.txt:1
+file4.txt:1
+grep: first_dir: Is a directory
+first_dir:0
+
+
+
+
+
+
+
+
+
+
